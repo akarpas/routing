@@ -18,7 +18,7 @@ export class ContactListComponent implements OnInit {
   ngOnInit() {
   }
 
-  viewDetails(id) {
-    this.router.navigate(['contact', id]);
+  viewDetails(id, param){
+    this.router.navigate(['contact', id], { queryParams: { foo: param }});
   }
 }

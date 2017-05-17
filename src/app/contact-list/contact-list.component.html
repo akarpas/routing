@@ -2,16 +2,23 @@
   <tr>
     <th> Id</th>
     <th> Name </th>
-    <th colspan="2"> Details </th>
+    <th> Details (btn) </th>
+    <th> Details (link) </th>
+    <th> Opt. Param </th>
   </tr>
   <tr *ngFor="let contact of contacts">
     <td> {{ contact.id }} </td>
     <td> {{ contact.name }} </td>
     <td>
-      <button (click)="viewDetails(contact.id)"> details (btn)  </button>
+      <button (click)="viewDetails(contact.id, optionalParam.value)">
+          details (btn)
+      </button>
     </td>
     <td>
-      <a [routerLink]="['contact',contact.id]"> details (link) </a>
+      <a [routerLink]="['/contact', contact.id]"
+         [queryParams]="{ foo: optionalParam.value }">
+          details (link) </a>
     </td>
+    <td> <input #optionalParam (keyup)="0" /> </td>
   </tr>
 </table>
