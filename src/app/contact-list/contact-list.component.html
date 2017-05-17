@@ -18,6 +18,9 @@
       <a [routerLink]="['/contact', contact.id]"
          [queryParams]="{ foo: optionalParam.value }">
           details (link) </a>
+      <a [routerLink]="['/contact', contact.id, 'edit']"
+         [queryParams]="{ foo: optionalParam.value }">
+          edit </a>
     </td>
     <td> <input #optionalParam (keyup)="0" /> </td>
   </tr>

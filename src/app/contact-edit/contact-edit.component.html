@@ -1,0 +1,9 @@
+<div>
+  <h4> This is the edit contact page </h4>
+  <label> id: {{ editContact.id }} </label>
+  <br>
+  <label> name: </label>
+  <input type="text" [(ngModel)]="editContact.name" />
+  <br>
+  <button (click)="save()"> Save </button>
+</div>
